@@ -25,6 +25,9 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         imageView.contentMode = .scaleAspectFill
         return imageView
     }()
+    
+    let imagesCellId = "imagesCellId"
+    let albumsCellId = "albumsCellId"
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,6 +45,27 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         backgroundImageView.setAnchor(top: view.topAnchor, topPad: 0, bottom: view.bottomAnchor, bottomPad: 0, left: view.leftAnchor, leftPad: 0, right: view.rightAnchor, rightPad: 0, height: 0, width: 0)
         
         collectionView.setAnchor(top: view.topAnchor, topPad: 0, bottom: view.bottomAnchor, bottomPad: 0, left: view.leftAnchor, leftPad: 0, right: view.rightAnchor, rightPad: 0, height: 0, width: 0)
+    }
+    
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return 2
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        if section == 1 {
+            return 9
+        }
+        return 1
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
+        if indexPath.section == 1 {
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: imagesCellId, for: indexPath)
+            return cell
+        }
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: albumsCellId, for: indexPath)
+        return cell
     }
 
 
