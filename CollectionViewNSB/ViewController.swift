@@ -179,6 +179,7 @@ class ImagesCell: UICollectionViewCell, UICollectionViewDelegate, UICollectionVi
         
         func setup() {
             
+            setCellShadow()
             addSubview(imageView)
             imageView.setAnchor(top: topAnchor, topPad: 0, bottom: bottomAnchor, bottomPad: 0, left: leftAnchor, leftPad: 0, right: rightAnchor, rightPad: 0, height: 0, width: 0)
         }
@@ -221,6 +222,7 @@ class AlbumsCell: UICollectionViewCell {
     }
     
     func setup() {
+        setCellShadow()
         addSubview(imageView)
         
         imageView.setAnchor(top: topAnchor, topPad: 0, bottom: bottomAnchor, bottomPad: 0, left: leftAnchor, leftPad: 0, right: rightAnchor, rightPad: 0, height: 0, width: 0)
