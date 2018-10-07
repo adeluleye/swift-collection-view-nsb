@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
     
     let collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
@@ -33,8 +33,10 @@ class ViewController: UIViewController {
     }
     
     func setupViews() {
-        view.addSubview(backgroundImageView)
+        collectionView.delegate = self
+        collectionView.dataSource = self
         
+        view.addSubview(backgroundImageView)
         view.addSubview(collectionView)
         
         backgroundImageView.setAnchor(top: view.topAnchor, topPad: 0, bottom: view.bottomAnchor, bottomPad: 0, left: view.leftAnchor, leftPad: 0, right: view.rightAnchor, rightPad: 0, height: 0, width: 0)
