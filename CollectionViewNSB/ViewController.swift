@@ -28,6 +28,8 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     
     let imagesCellId = "imagesCellId"
     let albumsCellId = "albumsCellId"
+    
+    let imagesArray = ["image1", "image2", "image3", "image4", "image5"]
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -68,6 +70,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
             return cell
         }
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: imagesCellId, for: indexPath) as! ImagesCell
+        cell.images = imagesArray
         return cell
     }
     
@@ -91,6 +94,12 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
 
 
 class ImagesCell: UICollectionViewCell, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+    
+    var images: [String]? {
+        didSet {
+            collectionView.reloadData()
+        }
+    }
     
     // make it scrollable
     let collectionView: UICollectionView = {
@@ -132,6 +141,9 @@ class ImagesCell: UICollectionViewCell, UICollectionViewDelegate, UICollectionVi
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! IconsCell
+        if let imageName = images?[indexPath.item] {
+            cell.imageView.image = UIImage(named: imageName)
+        }
         return cell
     }
     
@@ -162,7 +174,6 @@ class ImagesCell: UICollectionViewCell, UICollectionViewDelegate, UICollectionVi
         }
         
         func setup() {
-            backgroundColor = .blue
             
             addSubview(imageView)
             imageView.setAnchor(top: topAnchor, topPad: 0, bottom: bottomAnchor, bottomPad: 0, left: leftAnchor, leftPad: 0, right: rightAnchor, rightPad: 0, height: 0, width: 0)
