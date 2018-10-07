@@ -32,6 +32,9 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        collectionView.register(ImagesCell.self, forCellWithReuseIdentifier: imagesCellId)
+        collectionView.register(AlbumsCell.self, forCellWithReuseIdentifier: albumsCellId)
+        
         setupViews()
     }
     
