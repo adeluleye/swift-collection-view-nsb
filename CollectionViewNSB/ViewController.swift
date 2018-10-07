@@ -126,7 +126,6 @@ class ImagesCell: UICollectionViewCell, UICollectionViewDelegate, UICollectionVi
     }
     
     func setup() {
-        backgroundColor = .red
         
         addSubview(collectionView)
         collectionView.setAnchor(top: topAnchor, topPad: 0, bottom: bottomAnchor, bottomPad: 0, left: leftAnchor, leftPad: 0, right: rightAnchor, rightPad: 0, height: 0, width: 0)
