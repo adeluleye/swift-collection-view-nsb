@@ -10,8 +10,17 @@ import UIKit
 
 class ViewController: UIViewController {
     
+    let collectionView: UICollectionView = {
+        let layout = UICollectionViewFlowLayout()
+        layout.minimumLineSpacing = 16
+        layout.scrollDirection = .vertical
+        let cv = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        cv.backgroundColor = .clear
+        return cv
+    }()
+    
     let backgroundImageView: UIImageView = {
-        let image = UIImage(named: "bg")
+        let image = UIImage(named: "Bitmap")
         let imageView = UIImageView(image: image)
         imageView.contentMode = .scaleAspectFill
         return imageView
