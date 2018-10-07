@@ -133,6 +133,7 @@ class ImagesCell: UICollectionViewCell, UICollectionViewDelegate, UICollectionVi
         collectionView.delegate = self
         
         collectionView.register(IconsCell.self, forCellWithReuseIdentifier: cellId)
+        collectionView.showsHorizontalScrollIndicator = false
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
