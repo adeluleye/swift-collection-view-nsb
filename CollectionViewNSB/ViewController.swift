@@ -68,6 +68,22 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         return cell
     }
     
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        
+        if indexPath.section == 1 {
+            return CGSize(width: (view.frame.width / 3) - 16, height: 100)
+        }
+        return CGSize(width: view.frame.width, height: 300)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        
+        if section == 1 {
+            return UIEdgeInsets(top: 10, left: 8, bottom: 10, right: 8)
+        }
+        return UIEdgeInsets(top: 10, left: 0, bottom: 10, right: 0)
+    }
+    
 }
 
 
