@@ -30,6 +30,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     let albumsCellId = "albumsCellId"
     
     let imagesArray = ["image1", "image2", "image3", "image4", "image5"]
+    let albumsArray = ["album1", "album2", "album3", "album4", "album5", "album6", "album7", "album8", "album9"]
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -58,7 +59,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if section == 1 {
-            return 9
+            return albumsArray.count
         }
         return 1
     }
@@ -67,6 +68,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         
         if indexPath.section == 1 {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: albumsCellId, for: indexPath) as! AlbumsCell
+            cell.album = albumsArray[indexPath.item]
             return cell
         }
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: imagesCellId, for: indexPath) as! ImagesCell
@@ -190,9 +192,26 @@ class ImagesCell: UICollectionViewCell, UICollectionViewDelegate, UICollectionVi
 
 class AlbumsCell: UICollectionViewCell {
     
+    var album: String? {
+        didSet {
+            if let imageName = album {
+                imageView.image = UIImage(named: imageName)
+            }
+        }
+    }
+    
+    let imageView: UIImageView = {
+        let image = UIImage(named: "")
+        let imageView = UIImageView(image: image)
+        imageView.contentMode = .scaleAspectFill
+        imageView.clipsToBounds = true
+        imageView.layer.cornerRadius = 15
+        return imageView
+    }()
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
-        backgroundColor = .green
+        
         setup()
     }
     
@@ -201,7 +220,9 @@ class AlbumsCell: UICollectionViewCell {
     }
     
     func setup() {
+        addSubview(imageView)
         
+        imageView.setAnchor(top: topAnchor, topPad: 0, bottom: bottomAnchor, bottomPad: 0, left: leftAnchor, leftPad: 0, right: rightAnchor, rightPad: 0, height: 0, width: 0)
     }
     
 }
