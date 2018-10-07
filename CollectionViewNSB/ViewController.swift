@@ -145,6 +145,16 @@ class ImagesCell: UICollectionViewCell, UICollectionViewDelegate, UICollectionVi
     
     private class IconsCell: UICollectionViewCell {
         
+        // add image view
+        let imageView: UIImageView = {
+            let image = UIImage(named: "")
+            let imageView = UIImageView(image: image)
+            imageView.contentMode = .scaleAspectFill
+            imageView.clipsToBounds = true
+            imageView.layer.cornerRadius = 15
+            return imageView
+        }()
+        
         override init(frame: CGRect) {
             super.init(frame: frame)
             backgroundColor = .blue
