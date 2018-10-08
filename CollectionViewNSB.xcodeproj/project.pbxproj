@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E95807A6216BC2A600139E1D /* AlbumsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E95807A5216BC2A600139E1D /* AlbumsCell.swift */; };
+		E95807A8216BC31700139E1D /* ImagesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E95807A7216BC31700139E1D /* ImagesCell.swift */; };
 		E9E558642169852D001B21E2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9E558632169852D001B21E2 /* AppDelegate.swift */; };
 		E9E558662169852D001B21E2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9E558652169852D001B21E2 /* ViewController.swift */; };
 		E9E5586B2169852E001B21E2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E9E5586A2169852E001B21E2 /* Assets.xcassets */; };
@@ -15,6 +17,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E95807A5216BC2A600139E1D /* AlbumsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumsCell.swift; sourceTree = "<group>"; };
+		E95807A7216BC31700139E1D /* ImagesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagesCell.swift; sourceTree = "<group>"; };
 		E9E558602169852D001B21E2 /* CollectionViewNSB.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CollectionViewNSB.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E9E558632169852D001B21E2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E9E558652169852D001B21E2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -57,6 +61,8 @@
 				E9E5587521698619001B21E2 /* Extensions */,
 				E9E558632169852D001B21E2 /* AppDelegate.swift */,
 				E9E558652169852D001B21E2 /* ViewController.swift */,
+				E95807A7216BC31700139E1D /* ImagesCell.swift */,
+				E95807A5216BC2A600139E1D /* AlbumsCell.swift */,
 				E9E5586A2169852E001B21E2 /* Assets.xcassets */,
 				E9E5586C2169852E001B21E2 /* LaunchScreen.storyboard */,
 				E9E5586F2169852E001B21E2 /* Info.plist */,
@@ -143,8 +149,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				E9E5587721698630001B21E2 /* UIView+Extension.swift in Sources */,
+				E95807A8216BC31700139E1D /* ImagesCell.swift in Sources */,
 				E9E558662169852D001B21E2 /* ViewController.swift in Sources */,
 				E9E558642169852D001B21E2 /* AppDelegate.swift in Sources */,
+				E95807A6216BC2A600139E1D /* AlbumsCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
